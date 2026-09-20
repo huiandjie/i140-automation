@@ -1,0 +1,49 @@
+{
+  "last_name": "Doe",
+  "first_name": "Jane",
+  "middle_name": "Marie",
+  "current_wage": "125000",
+  "premium_processing": true,
+  "previously_approved_i140": false,
+  "current_address": {
+    "street": "100 Main Street",
+    "apt": "4B",
+    "unit_type": "Apt",
+    "city": "Austin",
+    "state": "TX",
+    "zip_code": "78701"
+  },
+  "date_of_birth": "03/15/1988",
+  "ssn": "123-45-6789",
+  "i94_number": "12345678901",
+  "date_of_last_arrival": "06/01/24",
+  "passport_number": "X1234567",
+  "passport_country": "India",
+  "passport_expiration": "12/31/30",
+  "birth_city_state": "Mumbai, Maharashtra",
+  "h1_expiration": "09/30/27",
+  "signer_name": "John Smith",
+  "signer_title": "HR Director",
+  "company_address": {
+    "street": "500 Tech Parkway",
+    "city": "Austin",
+    "state": "TX",
+    "zip_code": "78759"
+  },
+  "spouse": {
+    "name": "Doe, Robert",
+    "date_of_birth": "07/20/1987",
+    "place_of_birth": "Delhi, India",
+    "relationship": "Husband"
+  },
+  "children": [
+    {
+      "name": "Doe, Emily",
+      "date_of_birth": "01/10/2015",
+      "place_of_birth": "Austin, United States",
+      "relationship": "Child"
+    }
+  ],
+  "company_employees": "250",
+  "company_gross_income": "45000000"
+}

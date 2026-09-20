@@ -1,0 +1,9 @@
+pypdf>=4.0
+pywin32>=306
+gradio>=4.0
+
+# Build / packaging (developers only)
+nuitka>=2.0
+ordered-set
+zstandard
+pyinstaller>=6.0

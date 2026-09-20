@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+.Python
+.venv/
+venv/
+
+# Secrets / local env
+.env
+.env.*
+
+# Build / distribution (large binaries)
+dist/
+build/
+output/
+*.spec
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Generated / sensitive filled forms (keep blank templates only)
+test/i-140-filled*.pdf
+test/i-140-uscis-*.pdf
+test/extracted_sample.json
+test/field_map_preview.json
+test/test.pdf
+test/*filled*
+test/I140Filler/
