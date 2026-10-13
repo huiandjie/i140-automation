@@ -96,10 +96,12 @@ def _parse_signer(value: str) -> tuple[str, str]:
 def _parse_member_name(name: str) -> tuple[str, str, str]:
     if "," in name:
         last, rest = name.split(",", 1)
-        parts = rest.strip().split()
-        first = parts[0] if parts else ""
-        middle = " ".join(parts[1:]) if len(parts) > 1 else ""
-        return last.strip(), first, middle
+        rest = rest.strip()
+        # "Last, First, Middle" — first may contain spaces ("Anika Priya").
+        if "," in rest:
+            first, middle = rest.split(",", 1)
+            return last.strip(), first.strip(), middle.strip()
+        return last.strip(), rest, ""
 
     parts = name.split()
     if len(parts) <= 1:
@@ -208,7 +210,7 @@ def build_pdf_field_map(data: I140Data) -> dict[str, Any]:
         fields[f"{PDF_PREFIX}.#subform[3].Line8_Wages[0]"] = _format_money(
             data.current_wage
         )
-        fields[f"{PDF_PREFIX}.#subform[3].Line8_Per[0]"] = "year"
+        fields[f"{PDF_PREFIX}.#subform[3].Line8_Per[0]"] = data.wage_per or "year"
 
     if data.company_name:
         fields[f"{petitioner}.Line2_CompanyName[0]"] = data.company_name

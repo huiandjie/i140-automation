@@ -28,6 +28,8 @@ class I140Data:
     first_name: str = ""
     middle_name: str = ""
     current_wage: str = ""
+    # year, hour, week, or month — I-140 "per" for the wage offered
+    wage_per: str = "year"
     premium_processing: bool | None = None
     previously_approved_i140: bool | None = None
     # PDF Part 4 Item 8: "Has any immigrant visa petition ever been filed..."

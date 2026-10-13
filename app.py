@@ -109,6 +109,7 @@ def data_to_form(data: I140Data) -> list:
         data.date_of_birth,
         data.ssn,
         data.current_wage,
+        data.wage_per or "year",
         _bool_to_yn(data.premium_processing),
         _bool_to_yn(
             data.prior_immigrant_petition_filed
@@ -169,6 +170,7 @@ def form_to_data(*values) -> I140Data:
         date_of_birth,
         ssn,
         current_wage,
+        wage_per,
         premium_processing,
         prior_petition,
         street,
@@ -249,6 +251,7 @@ def form_to_data(*values) -> I140Data:
         date_of_birth=(date_of_birth or "").strip(),
         ssn=(ssn or "").strip(),
         current_wage=(current_wage or "").strip(),
+        wage_per=(wage_per or "year").strip() or "year",
         premium_processing=_yn_to_bool(premium_processing),
         previously_approved_i140=prior,
         prior_immigrant_petition_filed=prior,
@@ -413,6 +416,11 @@ def build_ui() -> gr.Blocks:
                     date_of_birth = gr.Textbox(label="Date of birth")
                     ssn = gr.Textbox(label="SSN")
                     current_wage = gr.Textbox(label="Current wage")
+                    wage_per = gr.Dropdown(
+                        ["year", "hour", "week", "month"],
+                        value="year",
+                        label="Wage per",
+                    )
                 with gr.Row():
                     premium_processing = gr.Dropdown(
                         YN_CHOICES, value="Unknown", label="Premium processing"
@@ -502,6 +510,7 @@ def build_ui() -> gr.Blocks:
             date_of_birth,
             ssn,
             current_wage,
+            wage_per,
             premium_processing,
             prior_petition,
             street,

@@ -45,6 +45,7 @@ def load_json_data(path: str) -> I140Data:
         first_name=raw.get("first_name", ""),
         middle_name=raw.get("middle_name", ""),
         current_wage=raw.get("current_wage", ""),
+        wage_per=raw.get("wage_per", "year") or "year",
         premium_processing=raw.get("premium_processing"),
         previously_approved_i140=raw.get("previously_approved_i140"),
         prior_immigrant_petition_filed=raw.get("prior_immigrant_petition_filed"),
