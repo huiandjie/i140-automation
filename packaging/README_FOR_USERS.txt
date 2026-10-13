@@ -23,19 +23,29 @@ How to run
 
 If it fails on startup
 ----------------------
-- Fully extract the zip again into a new empty folder
-- Allow the app in antivirus / Windows SmartScreen if prompted
-- Confirm this file exists:
-  _internal\gradio_client\types.json
+1. Run Start-I140Filler.bat instead of the .exe
+   (keeps the error message on screen)
+2. Fully extract the zip again into a new empty folder
+3. Allow the app in antivirus / Windows SmartScreen if prompted
+   ("More info" -> "Run anyway")
+4. Confirm these exist next to the exe:
+   - _internal\  (large folder)
+   - _internal\gradio_client\types.json
+5. Install Microsoft Visual C++ Redistributable (x64) if Windows
+   reports a missing VCRUNTIME/MSVCP DLL:
+   https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist
 
 Files
 -----
-- I140Filler.exe     Application
-- assets\            Blank USCIS I-140 PDF template (required)
-- output\            Working copies of generated PDFs
-- README.txt         This file
+- I140Filler.exe          Application
+- Start-I140Filler.bat    Recommended launcher (shows errors)
+- assets\                 Blank USCIS I-140 PDF template (required)
+- output\                 Working copies of generated PDFs
+- README.txt              This file
 
 Notes
 -----
 - First launch may take a little longer while the UI starts.
 - If the browser does not open, go to http://127.0.0.1:7860 manually.
+- Word is only required when extracting from a Word info document;
+  the UI can still open without Word.
